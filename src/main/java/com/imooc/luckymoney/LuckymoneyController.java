@@ -1,6 +1,5 @@
 package com.imooc.luckymoney;
 
-import com.sun.org.apache.bcel.internal.generic.LUSHR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +12,9 @@ public class LuckymoneyController {
 
     @Autowired
     private LuckymoneyRepository repository;
+
+    @Autowired
+    private LuckymoneyService service;
 
     /**
      * money list
@@ -58,4 +60,10 @@ public class LuckymoneyController {
 
         return null;
     }
+
+    @PostMapping("/luckymoneys/two")
+    public void createTwo() {
+        service.createTwo();
+    }
+
 }
